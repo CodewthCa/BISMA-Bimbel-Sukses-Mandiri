@@ -10,7 +10,6 @@ void BorderKeyLoginKeluar(int x,int y);
 
 void BorderKeyLoginKeluarClear(int x,int y);
 
-
 //----------Input Username & Password--------
 
 void InterfaceInputUserPass();
@@ -19,7 +18,13 @@ void BorderTema();
 
 void BorderInput();
 
-//-------------------------------------------
+//----------DashboardMenuAwal---------
+
+void InterfaceDashboardMenuAwal();
+
+void DashboardMenuKiridanKanan();
+
+//-----------------------------------------
 
 void InterfaceTampilanAwal() {
     hideCursor();

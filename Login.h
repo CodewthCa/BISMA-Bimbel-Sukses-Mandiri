@@ -20,8 +20,7 @@ void login() {
             found = True;
         }
         if (found == True) {
-            system("cls");
-            InterfaceTampilanAwal();
+            ClearArea(2,11,152,34);
         }
     }
 }
