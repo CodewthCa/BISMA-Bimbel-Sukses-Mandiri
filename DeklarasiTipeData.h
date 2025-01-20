@@ -13,6 +13,8 @@
 FILE *MyKaryawan;
 
 int i;
+int j;
+int opsi;
 int value;
 
 //enum untuk status aktif dan tidak aktif
