@@ -10,8 +10,6 @@
 #define RGHT_KEY 77
 #define LEFT_KEY 75
 
-FILE *MyKaryawan;
-
 int i;
 int j;
 int opsi;
@@ -20,17 +18,16 @@ int value;
 //enum untuk status aktif dan tidak aktif
 typedef enum{AKTIF = 1, TIDAKAKTIF = 0} Status;
 
-typedef struct Karyawan{
+typedef struct {
     int id;
     char nama[30];
     char nomor[14];
     char jabatan[10];
+    float gaji;
     char username[10];
     char password[10];
     Status status;
-};
-
-struct Karyawan karyawan;
+}Karyawan;
 
 char inputUsername[10];
 char inputPassword[10];

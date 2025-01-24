@@ -1,3 +1,4 @@
+
 typedef enum{True = 1, False = 0} Boolean;
 
 void login();
@@ -21,10 +22,32 @@ void login() {
         }
         if (found == True) {
             hideCursor();
-            ClearArea(2,11,152,34);
+            ClearArea(4,11,184,42);
             InterfaceDashboardMenuAwal();
-            InterfaceMenuManajer();
-            KeyMenuDashboardManajer(4,11,&value);
+            while (1){
+                InterfaceMenuManajer();
+                KeyMenuDashboardManajer(6,11,&value);
+                switch (value) {
+                    case 1:
+                        ClearArea(164,11,23,41);
+                        MenuKaryawan();
+                        ClearArea(164,11,23,41);
+                        SetColorBlock(15,10);
+                        HiasanDashboardKanan();
+                    break;
+                    case 2: //CRUD Mata Pelajaran
+                        break;
+                    case 3: //CRUD Paket Bimbel
+                        break;
+                    case 4: // CRUD Buku
+                        break;
+                    case 5: // CRUD Diskon
+                        break;
+                    case 6: // Laporan Transaksi
+                        break;
+                    default: system("cls"); break;
+                }
+            }
         }
     }
 }

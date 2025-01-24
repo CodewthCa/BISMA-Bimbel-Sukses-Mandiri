@@ -3,6 +3,7 @@
 #include <conio.h>
 
 typedef enum {True = 1, False = 0} boolean;
+
 typedef char string[255];
 typedef struct {
     int id_diskon;

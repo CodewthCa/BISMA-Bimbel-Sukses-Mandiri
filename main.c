@@ -9,10 +9,14 @@
 #include "Procedur.h"
 #include "Border.h"
 #include "ArrowKey.h"
+
+#include "../BISMA/Headers/CRUDKaryawan.h"
 #include "Login.h"
 
 int main(void) {
     fullscreen();
+    setConsoleFont(0,16,"Cascadia Code Bold");
+    disableScrollBar();
     system("color F5");
     login();
     getch();

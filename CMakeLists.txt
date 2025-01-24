@@ -8,4 +8,5 @@ add_executable(BISMA main.c
         Border.h
         DeklarasiTipeData.h
         ArrowKey.h
-        Login.h)
+        Login.h
+        Headers/CRUDKaryawan.h)

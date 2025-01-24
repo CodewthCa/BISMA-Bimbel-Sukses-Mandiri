@@ -1,37 +1,34 @@
 void KeyLoginKeluar(int *value);
 
+void SwitchMenuCRUD(int x,int y, int *opsi);
+
 //--------------Key Dashboard Manajer---------------
 
 void KeyMenuDashboardManajer(int x,int y,int *opsi);
-
-void SwitchMenuDashboardManajer(int opsi);
 
 //--------------------------------------------------
 
 void KeyLoginKeluar(int *value) {
     /* DECLARATION */
     char key;
+    *value = 1;
     /* ALGORITHM */
     hideCursor();
+    BorderKeyLoginKeluar(55,36);
     while(1) {
         key = getch();
-        if(key == UP_KEY) {
-            BorderKeyLoginKeluarClear(55,23);
-            BorderKeyLoginKeluar(55,14);
-            key = getch();
-            if(key == ENTER) {
-                ClearArea(2,2,152,43);
-                *value = 1;
-                break;
-            }
-        } else if(key == DWN_KEY) {
-            BorderKeyLoginKeluarClear(55,14);
-            BorderKeyLoginKeluar(55,23);
-            key = getch();
-            if(key == ENTER) {
-                *value = 0;
-                break;
-            }
+        if(key == LEFT_KEY) {
+            BorderKeyLoginKeluarClear(97, 36);
+            BorderKeyLoginKeluar(55,36);
+            *value = 1;
+        } else if(key == RGHT_KEY) {
+            BorderKeyLoginKeluarClear(55, 36);
+            BorderKeyLoginKeluar(97,36);
+            *value = 0;
+        }
+        if (key == ENTER) {
+            ClearArea(3, 2, 186, 50);
+            break;
         }
     }
 }
@@ -41,7 +38,6 @@ void KeyMenuDashboardManajer(int x,int y, int *opsi) {
     char key;
     *opsi = 1;
     /* ALGORITHM */
-    gotoxy(30,15); printf("%d",*opsi);
     hideCursor();
     BorderButtonMenu(x,y);
     while(1) {
@@ -68,20 +64,40 @@ void KeyMenuDashboardManajer(int x,int y, int *opsi) {
         if (key == ENTER) {
             break;
         }
-        gotoxy(30,15); printf("%d",*opsi);
     }
-    SwitchMenuDashboardManajer(*opsi);
 }
 
-void SwitchMenuDashboardManajer(int opsi) {
-    /*  DECALRATION */
-
+void SwitchMenuCRUD(int x, int y,int *opsi) {
+    /* DECALRATION */
+    char key;
+    *opsi = 1;
     /* ALGORITHM */
-    switch(opsi) {
-        case 1:
-            ClearArea(26,11,105,34);
-        gotoprinttext(25,20,"Hello");
-        break;
-            default: printf("Menu Invalid");
-}
+    hideCursor();
+    while(1) {
+        IconSwitchCRUD(x,y);
+        key = getch();
+        if (key == UP_KEY) {
+            *opsi-=1;
+            if(*opsi < 1) {
+                *opsi+=1;
+                y = y + 2;
+            }
+            y = y - 2;
+            IconSwitchCRUDClear(x,y+2);
+            IconSwitchCRUD(x,y);
+        } else if(key == DWN_KEY) {
+            *opsi+=1;
+            if(*opsi >  5) {
+                *opsi-=1;
+                y = y - 2;
+            }
+            y = y + 2;
+            IconSwitchCRUDClear(x,y-2);
+            IconSwitchCRUD(x,y);
+        }
+        if (key == ENTER) {
+            IconSwitchCRUDClear(x,y);
+            break;
+        }
+    }
 }
