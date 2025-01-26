@@ -10,7 +10,7 @@
 #include "Border.h"
 #include "ArrowKey.h"
 
-#include "../BISMA/Headers/CRUDKaryawan.h"
+#include "Headers/CRUDKaryawan.h"
 #include "Login.h"
 
 int main(void) {

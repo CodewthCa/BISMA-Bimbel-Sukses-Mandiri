@@ -1,3 +1,3 @@
-C:/PRG1/BISMA/cmake-build-debug/CMakeFiles/BISMA.dir
-C:/PRG1/BISMA/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/PRG1/BISMA/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Haikal/OneDrive - Politeknik Astra/Projekan/BISMA-Bimbel-Sukses-Mandiri/cmake-build-debug/CMakeFiles/BISMA.dir
+C:/Users/Haikal/OneDrive - Politeknik Astra/Projekan/BISMA-Bimbel-Sukses-Mandiri/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Haikal/OneDrive - Politeknik Astra/Projekan/BISMA-Bimbel-Sukses-Mandiri/cmake-build-debug/CMakeFiles/rebuild_cache.dir
