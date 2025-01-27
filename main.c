@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <mmsystem.h>
 #include <unistd.h>
+#include <ctype.h>
 
 #include "DeklarasiTipeData.h"
 #include "Procedur.h"

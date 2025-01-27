@@ -1,4 +1,4 @@
-typedef enum{True = 1, False = 0} Boolean;
+typedef enum{Pengajar = 3, Admin = 2, Manajer = 1, False = 0} Boolean;
 
 void FirstLogin();
 
@@ -17,6 +17,7 @@ void login() {
     /* ALGORITHM */
 
     if (value == 1) {
+        hideCursor();
         InterfaceInputUserPass();
         showcursor();
         ClearArea(10,22,43,1);  // Kosongin text box
@@ -29,11 +30,11 @@ void login() {
         gotoxy(10,27);
         inputPass(inputPassword);   // Input Password dari Procedur.h
         if (strcmp(inputUsername,"b") == 0 && strcmp(inputPassword, "b") == 0) {
-            found = True;
+            found = Manajer;
         } else if (strcmp(inputUsername,"DummyAdmin") == 0 && strcmp(inputPassword, "DummyAdmin") == 0) {
-            found = True;
+            found = Manajer;
         }
-        if (found == True) {
+        if (found == Manajer) {
             hideCursor();
             ClearArea(4,11,184,42);
             InterfaceDashboardMenuAwal();

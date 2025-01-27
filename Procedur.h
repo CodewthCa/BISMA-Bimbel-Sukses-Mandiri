@@ -65,15 +65,16 @@ void inputPass(char pass[]) {
             i--;
         }
         ch = _getch();  // Mengambil karakter tanpa menampilkannya
-        if (ch == 8) {
+        if (ch == 13) {
+            // 13 adalah nilai ASCII untuk Enter
+            break;
+        }
+        if (ch == 8 || !isalnum(ch)) {
             if (i > 0) {
-                // Hapus karakter sebelumnya dan mundur satu langkah
+                // Backspace
                 printf("\b \b");
                 i--;
             }
-        } else if (ch == 13) {
-            // 13 adalah nilai ASCII untuk Enter
-            break;
         } else {
             // Menambahkan karakter ke dalam password dan menampilkan tanda bintang
             pass[i] = ch;
@@ -93,13 +94,16 @@ void inputUser(char user[]) {
             i--;
         }
         user[i] = getch();
-        if (user[i] == 8) {
-            // Backspace
-            printf("\b \b");
-            i--;
-        } else if (user[i] == 13) {
+        if (user[i] == 13) {
             // 13 adalah nilai ASCII untuk Enter
             break;
+        }
+        if (user[i] == 8 || !isalnum(user[i])) {
+            if (i > 0) {
+                // Backspace
+                printf("\b \b");
+                i--;
+            }
         } else {
             printf("%c", user[i]);
             i++;
