@@ -55,6 +55,7 @@ void InterfaceTampilanAwal() {
 
 void InterfaceInputUserPass() {
     BorderTema();
+    BorderScreen();
     BorderInput();
     DrawFile(75,15,"../AsciiArt/LogoBuku.txt");
 }

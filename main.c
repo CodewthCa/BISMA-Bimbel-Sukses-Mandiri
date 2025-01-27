@@ -18,6 +18,6 @@ int main(void) {
     setConsoleFont(0,16,"Cascadia Code Bold");
     disableScrollBar();
     system("color F5");
-    login();
+    FirstLogin();
     getch();
 }

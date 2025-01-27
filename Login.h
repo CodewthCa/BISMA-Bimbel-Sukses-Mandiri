@@ -1,18 +1,28 @@
 
 typedef enum{True = 1, False = 0} Boolean;
 
+void FirstLogin();
+
 void login();
+
+void FirstLogin() {
+    InterfaceTampilanAwal();
+    KeyLoginKeluar(&value);
+    login();
+}
 
 void login() {
     char key;
     Boolean found;
     found = False;
     /* ALGORITHM */
-    InterfaceTampilanAwal();
-    KeyLoginKeluar(&value);
+
     if (value == 1) {
         InterfaceInputUserPass();
         showcursor();
+        strcpy(inputUsername, "");
+        strcpy(inputPassword, "");
+
         GoScanString(10,22,inputUsername);
         GoScanString(10,27,inputPassword);
         if (strcmp(inputUsername,"b") == 0 && strcmp(inputPassword, "b") == 0) {
@@ -45,9 +55,18 @@ void login() {
                         break;
                     case 6: // Laporan Transaksi
                         break;
+                    case 7: // Exit Menu
+                        ClearArea(3,11,186,42);
+                        system("color F5");
+                        value = 1;
+                        login();
                     default: system("cls"); break;
                 }
             }
+        } else {
+            login();
         }
+    } else if (value == 0) {
+        exit(0);
     }
 }
