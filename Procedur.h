@@ -9,6 +9,8 @@ void gotoprinttext(int x, int y, string text);
 void GoScanString(int x, int y,string text);
 void GoScanInt(int x, int y,int input);
 void GoScanFloat(int x, int y,float input);
+void inputPass(char pass[]);
+void inputUser(char user[]);
 
 void DrawFile(int x, int y, string filename);
 void ClearArea(int x, int y, int width, int height);
@@ -52,6 +54,60 @@ void GoScanFloat(int x, int y,float input) {
     gotoxy(x,y);
     scanf("%f", input);
 }
+
+void inputPass(char pass[]) {
+    fflush(stdin);
+    int i = 0;
+    char ch;
+    while (1) {
+        if (i > 10) {
+            printf("\b \b");
+            i--;
+        }
+        ch = _getch();  // Mengambil karakter tanpa menampilkannya
+        if (ch == 8) {
+            if (i > 0) {
+                // Hapus karakter sebelumnya dan mundur satu langkah
+                printf("\b \b");
+                i--;
+            }
+        } else if (ch == 13) {
+            // 13 adalah nilai ASCII untuk Enter
+            break;
+        } else {
+            // Menambahkan karakter ke dalam password dan menampilkan tanda bintang
+            pass[i] = ch;
+            printf("*");
+            i++;
+        }
+    }
+    pass[i] = '\0';  // Menambahkan null-terminating character ke akhir string
+}
+
+void inputUser(char user[]) {
+    fflush(stdin);
+    int i = 0;
+    while (1) {
+        if (i > 10) {
+            printf("\b \b");
+            i--;
+        }
+        user[i] = getch();
+        if (user[i] == 8) {
+            // Backspace
+            printf("\b \b");
+            i--;
+        } else if (user[i] == 13) {
+            // 13 adalah nilai ASCII untuk Enter
+            break;
+        } else {
+            printf("%c", user[i]);
+            i++;
+        }
+    }
+    user[i] = '\0';  // Menambahkan null-terminating character ke akhir string
+}
+
 void DrawFile(int x, int y, string filename) {
     FILE *fp;
     char str[MAXCHAR];

@@ -1,4 +1,3 @@
-
 typedef enum{True = 1, False = 0} Boolean;
 
 void FirstLogin();
@@ -20,11 +19,15 @@ void login() {
     if (value == 1) {
         InterfaceInputUserPass();
         showcursor();
-        strcpy(inputUsername, "");
-        strcpy(inputPassword, "");
+        ClearArea(10,22,43,1);  // Kosongin text box
+        ClearArea(10,27,43,1);  // Kosongin text box
+        strcpy(inputUsername, "\0");    // Kosongin inputUsername
+        strcpy(inputPassword, "\0");    // Kosongin inputPassword
 
-        GoScanString(10,22,inputUsername);
-        GoScanString(10,27,inputPassword);
+        gotoxy(10,22);
+        inputUser(inputUsername);   // Input Username dari Procedur.h
+        gotoxy(10,27);
+        inputPass(inputPassword);   // Input Password dari Procedur.h
         if (strcmp(inputUsername,"b") == 0 && strcmp(inputPassword, "b") == 0) {
             found = True;
         } else if (strcmp(inputUsername,"DummyAdmin") == 0 && strcmp(inputPassword, "DummyAdmin") == 0) {
