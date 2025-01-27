@@ -69,13 +69,14 @@ void inputPass(char pass[]) {
             // 13 adalah nilai ASCII untuk Enter
             break;
         }
-        if (ch == 8 || !isalnum(ch)) {
+        if (ch == 8) {
             if (i > 0) {
                 // Backspace
                 printf("\b \b");
                 i--;
             }
-        } else {
+        } else if (!isalnum(ch)) {
+        }else {
             // Menambahkan karakter ke dalam password dan menampilkan tanda bintang
             pass[i] = ch;
             printf("*");
@@ -98,12 +99,13 @@ void inputUser(char user[]) {
             // 13 adalah nilai ASCII untuk Enter
             break;
         }
-        if (user[i] == 8 || !isalnum(user[i])) {
+        if (user[i] == 8) {
             if (i > 0) {
                 // Backspace
                 printf("\b \b");
                 i--;
             }
+        } else if (!isalnum(user[i])) {
         } else {
             printf("%c", user[i]);
             i++;
